@@ -1,0 +1,17 @@
+const express = require('express')
+const bodyParser = require('body-parser')
+
+const InitiateDb = require('./config/db')
+const userroutes = require('./routes/userroutes')
+
+InitiateDb()
+const PORT = 3031
+
+var app = express()
+app.use(bodyParser.json())
+
+app.use('/userrouters', userroutes)
+
+app.listen(PORT, (req, res) => {
+    console.log(`server started at port ${PORT}`)
+})
