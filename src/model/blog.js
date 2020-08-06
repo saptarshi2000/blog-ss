@@ -5,7 +5,7 @@ const blogSchema = mongoose.Schema({
         type: String,
         require: true
     },
-    text: {
+    body: {
         type: String,
         require: true
     },
@@ -17,7 +17,7 @@ const blogSchema = mongoose.Schema({
     post_at: {
         type: Date,
         require: true,
-
+        default: Date.now()
     },
     active: {
         type: Boolean,

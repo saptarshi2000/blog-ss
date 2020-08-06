@@ -1,6 +1,5 @@
 const express = require('express')
 const bodyParser = require('body-parser')
-
 const InitiateDb = require('./config/db')
 const userroutes = require('./routes/userroutes')
 
