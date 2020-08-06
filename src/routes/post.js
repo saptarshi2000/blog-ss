@@ -10,11 +10,11 @@ router.post('/',async(req,res)=>{
             image:req.body.imageurl
         })
         await post.save().then(()=>{
-            console.log(user)
+            console.log(post)
             //next()
             res.status(201).send()
         })
-    }catch{
+    }catch(e){
         res.status(500)
         console.log(e)
     }
