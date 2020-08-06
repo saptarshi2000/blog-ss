@@ -1,3 +1,4 @@
+const { modelSchemas } = require('mongoose')
 const mongoose = require('mongoose')
 
 const blogSchema = mongoose.Schema({
@@ -35,3 +36,4 @@ const blogSchema = mongoose.Schema({
         default: 0
     }
 })
+module.exports = mongoose.model("blog",blogSchema)
