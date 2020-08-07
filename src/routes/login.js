@@ -38,13 +38,14 @@ router.post('/', [body('email').isEmail().normalizeEmail(), body('password', "pl
                     _id: user._id,
                     email: email
                 }
+                var username = user.username
                 const token = jwt.sign(payload, "privatekey", { expiresIn: '10d' });
 
                 await user.updateOne({ $set: { token: token } }).exec()
 
                 console.log(user)
                 console.log(token)
-                res.status(200).json({ token: token })
+                res.status(200).json({ token: username })
             } else {
                 res.status(400).json({})
             }
