@@ -24,7 +24,7 @@ router.post('/', [body('email').isEmail().normalizeEmail(), body('password', "pl
 
     } else {
         if (!err.isEmpty()) {
-            const errror = err.array()[0].msg
+            const error = err.array()[0].msg
             return res.status(404).json({})
         }
         const user = await User.findOne({ email: email })
